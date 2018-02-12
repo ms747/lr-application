@@ -26,9 +26,9 @@ class FormActitvity : AppCompatActivity() {
                 for (document in task.result) {
                     mydata.add(document.data)
                 }
-
-
-                    var customAdapter = CustomAdapter(this,mydata)
+                    // Create Adapter
+                    val customAdapter = CustomAdapter(this,mydata)
+                    // Set Adapter
                     consignor.adapter = customAdapter
                     consignee.adapter = customAdapter
             }
@@ -37,7 +37,7 @@ class FormActitvity : AppCompatActivity() {
 
 
         sendToAdd.setOnClickListener {
-            var formIntent = Intent(this,AddActivity::class.java)
+            val formIntent = Intent(this,AddActivity::class.java)
             startActivity(formIntent)
             finish()
         }
